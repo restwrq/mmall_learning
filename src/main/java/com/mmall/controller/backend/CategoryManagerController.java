@@ -22,8 +22,8 @@ import javax.servlet.http.HttpSession;
 public class CategoryManagerController {
 
 
-    @Autowired
-    private IUserService iUserService;
+ @Autowired
+ private IUserService iUserService;
 
     @Autowired
     private ICategoryService iCategoryService;
