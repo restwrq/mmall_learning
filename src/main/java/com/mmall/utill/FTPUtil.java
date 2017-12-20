@@ -1,4 +1,4 @@
-package com.mmall.util;
+package com.mmall.utill;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.slf4j.Logger;
@@ -20,7 +20,7 @@ public class FTPUtil {
     private static String ftpUser = PropertiesUtil.getProperty("ftp.user");
     private static String ftpPass = PropertiesUtil.getProperty("ftp.pass");
 
-    public FTPUtil(String ip,int port,String user,String pwd){
+    public FTPUtil(String ip, int port, String user, String pwd){
         this.ip = ip;
         this.port = port;
         this.user = user;

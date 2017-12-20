@@ -1,4 +1,4 @@
-package com.mmall.util;
+package com.mmall.utill;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
