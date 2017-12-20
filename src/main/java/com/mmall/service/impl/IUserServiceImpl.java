@@ -7,12 +7,14 @@ import com.mmall.dao.UserMapper;
 import com.mmall.pojo.User;
 import com.mmall.utill.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 /**
  * Created by 10679 on 2017/11/8.
  */
+@Service("iUserService")
 public class IUserServiceImpl {
     @Autowired
     private UserMapper userMapper;
