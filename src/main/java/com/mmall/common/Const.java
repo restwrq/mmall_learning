@@ -79,7 +79,7 @@ public class Const {
                     return orderStatusEnum;
                 }
             }
-            throw new RuntimeException("么有找到对应的枚举");
+            throw new RuntimeException("没有找到对应的枚举");
         }
     }
     public interface  AlipayCallback{
@@ -136,12 +136,10 @@ public class Const {
                     return paymentTypeEnum;
                 }
             }
-            throw new RuntimeException("么有找到对应的枚举");
+            throw new RuntimeException("没有找到对应的枚举");
         }
 
     }
-
-
 
 
 }
