@@ -55,6 +55,7 @@ public ServerResponse<String> update(Integer userId,Shipping shipping){
     }
     return ServerResponse.createBySuccess("查到了地址",shipping);
     }
+    //pageNum 当前的页数，pageSize每页显示的数量
     public ServerResponse<PageInfo> list(Integer userId,int pageNum, int pageSize){
         PageHelper.startPage(pageNum,pageSize);
         List<Shipping> shippingList=shippingMapper.selectByUserId(userId);
