@@ -22,7 +22,11 @@ public class FileServiceImpl implements IFileService {
 
 
     public String upload(MultipartFile file, String path){
+        System.out.println("《000《《《《《"+file);
+        System.out.println("《000《《《《《"+file.getSize());
+
         String fileName = file.getOriginalFilename();
+        System.out.println("《《《《《《《"+fileName);
         //扩展名
         //abc.jpg
         String fileExtensionName = fileName.substring(fileName.lastIndexOf(".")+1);
@@ -45,7 +49,7 @@ public class FileServiceImpl implements IFileService {
             FTPUtil.uploadFile(Lists.newArrayList(targetFile));
             //已经上传到ftp服务器上
 
-            targetFile.delete();
+            //targetFile.delete();
         } catch (IOException e) {
             logger.error("上传文件异常",e);
             return null;

@@ -30,12 +30,12 @@ public class FTPUtil {
         FTPUtil ftpUtil = new FTPUtil(ftpIp,21,ftpUser,ftpPass);
         logger.info("开始连接ftp服务器");
         boolean result = ftpUtil.uploadFile("img",fileList);
-        logger.info("开始连接ftp服务器,结束上传,上传结果:{}");
+        logger.info("开始连接ftp服务器,结束上传,上传结果:{}",result);
         return result;
     }
 
 
-    private boolean uploadFile(String remotePath,List<File> fileList) throws IOException {
+    private boolean uploadFile(String remotePath,List<File> fileList){
         boolean uploaded = true;
         FileInputStream fis = null;
         //连接FTP服务器
@@ -56,8 +56,16 @@ public class FTPUtil {
                 uploaded = false;
                 e.printStackTrace();
             } finally {
-                fis.close();
-                ftpClient.disconnect();
+                try {
+                    ftpClient.disconnect();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return uploaded;
@@ -77,17 +85,6 @@ public class FTPUtil {
         }
         return isSuccess;
     }
-
-
-
-
-
-
-
-
-
-
-
     private String ip;
     private int port;
     private String user;
